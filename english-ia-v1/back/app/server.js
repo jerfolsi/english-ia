@@ -94,15 +94,19 @@ router.route('/expression')
           res.setHeader('Access-Control-Allow-Origin', '*');
           res.writeHead(200, {'Content-Type': 'text/plain'});
 
-          dataExpression = new DataExpression({vf: req.body.vf , ve: req.body.ve});
-          DataExpression.create(dataExpression, function(err){
-            if(err)
-              console.log(err);
-            else
-              console.log("Add new Expression : "+ dataExpression.vf + " / " + dataExpression.ve);
-          });
+          if(req.body.vf != undefined && req.body.ve != undefined){
+            dataExpression = new DataExpression({vf: req.body.vf , ve: req.body.ve});
+            DataExpression.create(dataExpression, function(err){
+              if(err)
+                console.log(err);
+              else
+                console.log("Add new Expression : "+ dataExpression.vf + " / " + dataExpression.ve);
+            });
+            res.end("received");
+          }else {
+            res.end("erreur nouvelle expression");
+          }
 
-          res.end("received");
     })
     .put(function(req, res) {
     })

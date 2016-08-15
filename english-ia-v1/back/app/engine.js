@@ -24,7 +24,7 @@ module.exports = {
                 }
           });
   },
- 
+
 
   listNewExpressions: function(req, res, DataExpression, DataExpressionStat, merge) {
       res.setHeader('Access-Control-Allow-Origin', '*');
@@ -106,15 +106,20 @@ module.exports = {
            				var statSelected = stats[indiceRand];
 
            				DataExpression.findOne({_id: statSelected.expression_id}).exec(function(err, expression){
-          	 				//--- merge new properties before sending the response
-          	                var target = merge(expression.toObject(),{
-          	                      priority: statSelected.priority,
+
+                        if(expression != undefined){
+                            //--- merge new properties before sending the response
+                            var target = merge(expression.toObject(),{
+                                  priority: statSelected.priority,
                                   nb_answer_wrong: statSelected.nb_answer_wrong,
                                   nb_answer_good: statSelected.nb_answer_good
-          	                });
+                            });
 
-          	                //--- send response to the client
-                          	res.end(JSON.stringify(target));
+                            //--- send response to the client
+                          res.end(JSON.stringify(target));
+                        }else {
+                          res.end("{}");
+                        }
            				});
               }
               else{
