@@ -1,0 +1,123 @@
+*{
+
+}
+
+/* ------------------------------------------ */
+/* GENERAL 									  */
+/* ------------------------------------------ */
+.prio-level-0{color:black;}
+.prio-level-1{color:green;}
+.prio-level-2{color:orange;}
+.prio-level-3{color:red;}
+
+/* ------------------------------------------ */
+/* HEADER 									  */
+/* ------------------------------------------ */
+
+.header{
+	color:#FFFFFF;
+	background-color: #92AED5;
+}
+
+.header .logo{
+	padding-top:20px;
+	padding-bottom:20px;
+	font-size: 30px;
+
+}
+
+.header .menu{
+	padding-top:30px;
+	font-size:17px;
+	text-align: right;
+}
+
+.header .menu a{
+	color:#FFFFFF;
+}
+
+/* ------------------------------------------ */
+/* QUESTION 									  */
+/* ------------------------------------------ */
+
+.question{
+	margin-top:100px;
+	text-align:center;
+	padding-top:30px;
+ 	font-size:25px;
+ 	/*color:#44699D;*/
+}
+
+.indice{
+		padding-top:10px;
+ 	font-size:20px;
+ 	color:#555555;
+ 	font-weight: normal;
+
+}
+
+/* ------------------------------------------ */
+/* ANSWER 									  */
+/* ------------------------------------------ */
+
+.answer{
+	text-align: center;
+	padding-top:40px;
+}
+
+.answer input{
+	width:500px;
+	height:60px;
+	padding:10px;
+	font-size:25px;
+
+	 border: 1px solid #92AED5;
+    border-radius: 7px;
+}
+
+.answer input:focus{
+	 box-shadow: 0 0 3pt 1pt #92AED5;
+}
+
+.answer .actions{
+	padding-top:20px;
+}
+
+.btn-submit{
+	background-color: #2B5389;
+	color:#FFFFFF;
+	width:150px;
+	height:40px;
+}
+
+.btn-submit:hover{
+	color:#FFFFFF;
+	opacity: 0.8;
+}
+
+.btn-next{
+	background-color: #92AED5;
+	color:#FFFFFF;
+	width:150px;
+	height:40px;
+}
+
+.btn-next:hover{
+	color:#FFFFFF;
+	opacity: 0.8;
+}
+
+/* ------------------------------------------ */
+/* STATS 									  */
+/* ------------------------------------------ */
+
+.stats{
+	background-color:#D0D0D0;
+	color:#555555;
+	font-size:12px;
+}
+
+.stats h1{
+	font-size:16px;
+	font-weight: bold;
+}

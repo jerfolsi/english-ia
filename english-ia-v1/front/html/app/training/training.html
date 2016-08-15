@@ -1,0 +1,72 @@
+<div ng-controller="CtrlTraining as ctrl">
+
+
+
+
+    <section class="question">
+                  <div class="container">
+                       &nbsp;<span class="{{ctrl.question.cssClass}}">{{ ctrl.question.vf }}</span>
+                  </div>                      
+                  <div class="indice">
+                      {{ctrl.question.indice}}
+                  </div>
+              </section>
+
+              <section class="answer">
+                  <div class="container">
+                      <div>
+                          <input placeholder="Translate in english" class="answer" ng-model="ctrl.answer"></input>
+                      </div>
+
+                      <div class="actions">
+                          <button type="button" class="btn btn-submit" ng-click="ctrl.checkBtn()">Submit</button>
+                          <button type="button" class="btn btn-submit" ng-click="ctrl.nextRelatedBtn()">Next Related</button>
+                          <button type="button" class="btn btn-next" ng-click="ctrl.nextBtn()">Next</button>
+                      </div>
+
+                      <div>
+                          Mauvaise(s) réponse(s) : {{ctrl.question.nb_answer_wrong}}
+                           {{ctrl.result}}
+                      </div>
+                      <div>
+                          Priority : {{ctrl.priority}}
+                      </div>
+
+                  </div>
+    </section>
+
+
+
+
+<section class="stats">
+
+        <div class="container" style="margin-top:150px;">
+            <div class="row">
+                <div class="col-md-4 stats" style="">
+                    <h1>Top Priority</h1>
+                        <div ng-repeat="expression in ctrl.expTopPriority">
+                            <span class="{{expression.cssClass}}">{{expression.expression_id.vf}}</span>
+                            <small>
+                            [prio : {{expression.priority}} / 
+                             W:{{expression.nb_answer_wrong}} / 
+                             R:{{expression.nb_answer_good}}] </small>
+                        </div>   
+                </div>
+                <div class="col-md-4 stats" style="">
+                    <h1>New expressions</h1>
+                        <div ng-repeat="expression in ctrl.expNews">
+                             {{expression.vf}}
+                        </div>   
+                </div>
+                <div class="col-md-4 stats" style="">
+                    <h1>Related expressions</h1>
+                        <strong>{{ctrl.relatedBaseWord}}</strong>
+                        <div ng-repeat="expression in ctrl.relatedExpressions">
+                              {{expression.vf}}
+                        </div>   
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</section>

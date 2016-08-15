@@ -1,0 +1,32 @@
+version: '2'
+services:
+
+
+#############
+  mongodb:
+    build: ./mongodb
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./mongodb/data:/data/db
+
+#############
+  back:
+    build: ./back
+    ports:
+      - '8888:8080'
+    volumes:
+      - ./back/app:/nodeapp
+    depends_on:
+      - mongodb
+
+
+#############
+  front:
+    build: ./front
+    ports:
+      - '8080:80'
+    volumes:
+      - ./front/html:/var/www/html
+    depends_on:
+      - back

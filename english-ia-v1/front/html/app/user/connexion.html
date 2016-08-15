@@ -1,0 +1,25 @@
+<div ng-controller="UserConnexionCtrl as ctrl">
+
+	<div ng-switch="ctrl.status()">
+		<!-- when use is not logged in -->
+		<div ng-switch-when="false">
+			<div>
+			     <span>email : </span><input type="text" ng-model="ctrl.email" placeholder="enter your email"></input>
+			</div>
+			<div>
+			     <span>password : </span><input type="text" ng-model="ctrl.password" placeholder="enter your password"></input>
+			</div>
+			<div>
+				<button ng-click="ctrl.login()">Connexion</button>
+			</div>
+		</div>
+
+		<!-- when use is logged in -->
+		<div ng-switch-when="true">
+			<button ng-click="ctrl.loggout()">Deconnexion</button>
+		</div>
+
+	</div>
+
+</div>
+

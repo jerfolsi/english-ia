@@ -1,0 +1,54 @@
+<html>
+   <head>
+      <meta charset="utf8">
+      <title>AppExpressionTraining</title>
+      <script src="js/angular/angular.min.js"></script>
+      <script src="js/angular/angular-route.js"></script>
+      <script src="https://code.angularjs.org/1.4.2/angular-resource.min.js"></script>
+
+      <link href = "css/bootstrap/bootstrap.min.css" rel = "stylesheet">
+      <link href="css/main.css" rel="stylesheet" type="text/css">
+      <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+   </head>
+   <body ng-app="AppExpressionTraining">
+   <check-user></check-user>
+
+
+               <header class="header">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-md-6 logo">
+                              Expression Training
+                          </div>
+
+                          <div class="col-md-6 menu">
+                              <a href="#/home">Training Random</a>
+                              &nbsp;&nbsp;|&nbsp;&nbsp;<a href="#/expression-add">Add Expression</a>
+                              &nbsp;&nbsp;|&nbsp;&nbsp;<a href="#/user-connexion">Connexion</a>
+                          </div>
+                      </div>
+                  </div>
+              </header>
+
+
+
+
+ <ng-view></ng-view>
+
+   
+   </body>
+
+
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      
+   <!-- Include all compiled plugins (below), or include individual files as needed -->
+   <script src = "js/bootstrap/bootstrap.min.js"></script>
+
+
+   <!-- script à lancer à la fin -->
+    <script src = "app/script.js"></script>
+    <script src="app/expression/expression-ctrl.js"></script>
+    <script src="app/training/training-ctrl.js"></script>
+    <script src="app/user/user-connexion-ctrl.js"></script>
+</html>

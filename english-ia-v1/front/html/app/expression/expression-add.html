@@ -1,0 +1,18 @@
+
+<section class="answer">
+<div ng-controller="CtrlExpressionAdd as ctrl">
+   	<div class="container" style="padding-top:70px;">
+        <h1>Add an expression</h1>
+        <div>
+        	<div>Version française : </div>
+            <input class="answer" name="vf" type="text" ng-model="ctrl.vf" placeholder="exemple : être"></input>
+        </div>
+        <div style="padding-top:20px;">
+        	 <div>Version anglaise : </div><input class="answer"  name="ve" type="text" ng-model="ctrl.ve" placeholder="exemple : to be"></input>
+        </div>
+        <div style="padding-top:20px;">
+        	<button ng-click="ctrl.addExpression()" class="btn btn-next">add Expression</button>
+        </div>
+    </div>
+</div>
+</section>
