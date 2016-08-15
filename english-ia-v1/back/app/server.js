@@ -113,6 +113,31 @@ router.route('/expression')
     .get(function(req, res) {
    });
 
+
+
+//-------------------------------------------------------------------
+// ROUTE : /expression/random
+// @todo : sortir ca de la (faille de sécurité de fou)
+//-------------------------------------------------------------------
+router.route('/expression/exportdb')
+    .get(function(req, res) {
+        DataExpression.find()
+          .exec(function(err, expressions){
+              console.log(">>>>>>>>>> export database");
+              var result = "";
+              for(var i in expressions)
+                  result += "db.dataexpressions.insert("+JSON.stringify(expressions[i])+");\n";
+
+              //db.users.insert({name:"john", email:"john@doe.com", age:12});
+
+              res.end(result);
+        });
+    });
+
+
+
+
+
 //-------------------------------------------------------------------
 // ROUTE : /expression/random
 //-------------------------------------------------------------------
