@@ -21,7 +21,7 @@ app.controller('CtrlTraining', ['DataExpression', '$http', function(DataExpressi
 		}
 
 		//--- get a random expression from the API
-		$http.post("http://localhost:8888/api/expression/random", data)
+		$http.post(SERVER_BACK_ADDRESS + "/api/expression/random", data)
 		  	.then(function (response) {
 		  		console.log("response : "+ response);
 					self._id = response.data._id;
@@ -109,7 +109,7 @@ app.controller('CtrlTraining', ['DataExpression', '$http', function(DataExpressi
 		console.log(data);
 
 		//--- Step : send the data to the API
-		$http.post("http://localhost:8888/api/expression-stat/", data)
+		$http.post(SERVER_BACK_ADDRESS + "/api/expression-stat/", data)
 		  	.then(function (response) {
 		  			console.log("response : "+ response);
 		  			if(response.data == "success"){
@@ -144,7 +144,7 @@ app.controller('CtrlTraining', ['DataExpression', '$http', function(DataExpressi
 	//--------------------------------------------------
 	self.initListTopPriority = function(){
 		//--- Step : send the data to the API
-		$http.get("http://localhost:8888/api/expression/list-top-priority/1")
+		$http.get(SERVER_BACK_ADDRESS + "/api/expression/list-top-priority/1")
 		  	.then(function (response) {
 				  	self.expTopPriority = response.data;
 
@@ -165,7 +165,7 @@ app.controller('CtrlTraining', ['DataExpression', '$http', function(DataExpressi
 	//--------------------------------------------------
 	self.initListNewExpressions = function(){
 		//--- Step : send the data to the API
-		$http.get("http://localhost:8888/api/expression/list-new-expressions/1")
+		$http.get(SERVER_BACK_ADDRESS + "/api/expression/list-new-expressions/1")
 		  	.then(function (response) {
 				  	self.expNews = response.data;
 				}, function (error) {
@@ -190,7 +190,7 @@ app.controller('CtrlTraining', ['DataExpression', '$http', function(DataExpressi
 		self.relatedBaseWord = word;
 
 		//--- Step : send the data to the API
-		$http.get("http://localhost:8888/api/expression/related/"+word)
+		$http.get(SERVER_BACK_ADDRESS + "/api/expression/related/"+word)
 		  	.then(function (response) {
 				  	self.relatedExpressions = response.data;
 				}, function (error) {

@@ -6,6 +6,8 @@
 // ###############################################################################
 // ###############################################################################
 
+var SERVER_BD_ADDRESS = 'mongodb://172.18.0.2';
+
 express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -334,7 +336,9 @@ app.use('/api', router);
 // ###############################################################################
 // ###############################################################################
 
-mongoose.connect('mongodb://172.25.0.2/expression');
+
+// warning : you have to set the right IP adresse (look the container's ip)
+mongoose.connect(SERVER_BD_ADDRESS+'/expression');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {

@@ -68,11 +68,11 @@ app.factory('ResourceData', [ '$resource', function( $resource ) {
 // qui servira pour tous les types d'objets : User, Facture, Book, ..
 //-------------------------------------------------------------------
 app.factory('DataExpression', ['ResourceData', function(ResourceData) {
-     return ResourceData('http://localhost:8888/api/expression/:id', { id: '@id' } );
+     return ResourceData(SERVER_BACK_ADDRESS + '/api/expression/:id', { id: '@id' } );
 }]);
 
 app.factory('DataUser', ['ResourceData', function(ResourceData) {
-     return ResourceData('http://localhost:8888/api/user/:id', { id: '@id' } );
+     return ResourceData(SERVER_BACK_ADDRESS + '/api/user/:id', { id: '@id' } );
 }]);
 
 app.factory('UserService', [function() {
